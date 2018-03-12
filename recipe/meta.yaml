@@ -1,4 +1,4 @@
-{% set version = '1.0.2' %}
+{% set version = "2.1.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -14,7 +14,7 @@ source:
     - https://cran.r-project.org/src/contrib/Archive/withr/withr_{{ version }}.tar.gz
 
 
-  sha256: 2391545020adc4256ee7c2e31c30ff6f688f0b6032e355e1ce8f468cab455f10
+  sha256: bd5fae3846b8f89081a0991375402266dccf49bfa5d614690deea1b03ba5eb9e
 
 build:
   number: 0

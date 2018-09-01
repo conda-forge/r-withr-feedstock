@@ -1,5 +1,4 @@
-{% set version = "2.1.1" %}
-
+{% set version = '2.1.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,43 +9,40 @@ package:
 source:
   fn: withr_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/withr_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/withr/withr_{{ version }}.tar.gz
-
-
-  sha256: bd5fae3846b8f89081a0991375402266dccf49bfa5d614690deea1b03ba5eb9e
+    - {{ cran_mirror }}/src/contrib/withr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/withr/withr_{{ version }}.tar.gz
+  sha256: 41366f777d8adb83d0bdbac1392a1ab118b36217ca648d3bb9db763aa7ff4686
 
 build:
+  merge_build_host: True  # [win]
   number: 0
-
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: True  # [win32]
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('withr')"  # [not win]
+    - $R -e "library('withr')"           # [not win]
     - "\"%R%\" -e \"library('withr')\""  # [win]
 
-
-
 about:
-  home: http://github.com/jimhester/withr
+  home: http://withr.r-lib.org, http://github.com/r-lib/withr#readme
   license: GPL (>= 2)
   summary: A set of functions to run code 'with' safely and temporarily modified global state.
     Many of these functions were originally a part of the 'devtools' package, this provides
     a simple package with limited dependencies to provide access to these functions.
   license_family: GPL3
-
-
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
@@ -55,3 +51,4 @@ extra:
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer

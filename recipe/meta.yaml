@@ -1,4 +1,4 @@
-{% set version = '2.1.2' %}
+{% set version = "2.2.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,19 +11,19 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/withr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/withr/withr_{{ version }}.tar.gz
-  sha256: 41366f777d8adb83d0bdbac1392a1ab118b36217ca648d3bb9db763aa7ff4686
+  sha256: 4c21e51cf48f8c281ddd5f5ec358ac446df3c982104fd00bfe62d9259d73b582
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
-  number: 1001
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
   run:
@@ -37,12 +37,11 @@ test:
 about:
   home: http://withr.r-lib.org, http://github.com/r-lib/withr#readme
   license: GPL (>= 2)
-  summary: A set of functions to run code 'with' safely and temporarily modified global state.
-    Many of these functions were originally a part of the 'devtools' package, this provides
-    a simple package with limited dependencies to provide access to these functions.
+  summary: A set of functions to run code 'with' safely and temporarily modified global state. Many of these functions were originally a part of the 'devtools' package,
+    this provides a simple package with limited dependencies to provide access to these functions.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3  # [unix]
+  license_file: {{ environ["PREFIX"] }}\R\share\licenses\GPL-3  # [win]
 
 extra:
   recipe-maintainers:

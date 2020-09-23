@@ -3,7 +3,7 @@ About r-withr
 
 Home: http://withr.r-lib.org, http://github.com/r-lib/withr#readme
 
-Package license: GPL-2
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 

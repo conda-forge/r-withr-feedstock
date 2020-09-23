@@ -35,7 +35,7 @@ test:
 
 about:
   home: http://withr.r-lib.org, http://github.com/r-lib/withr#readme
-  license: GPL-2
+  license: GPL-2.0-or-later
   summary: A set of functions to run code 'with' safely and temporarily modified global state. Many of these functions were originally a part of the 'devtools' package, this provides a simple package with limited dependencies to provide access to these functions.
   license_family: GPL2
   license_file:

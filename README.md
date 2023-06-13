@@ -1,11 +1,11 @@
-About r-withr
-=============
+About r-withr-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-withr-feedstock/blob/main/LICENSE.txt)
 
 Home: http://withr.r-lib.org, http://github.com/r-lib/withr#readme
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-withr-feedstock/blob/main/LICENSE.txt)
 
 Summary: A set of functions to run code 'with' safely and temporarily modified global state. Many of these functions were originally a part of the 'devtools' package, this provides a simple package with limited dependencies to provide access to these functions.
 

@@ -1,4 +1,4 @@
-{% set version = "3.0.2" %}
+{% set version = "3.0.3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/withr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/withr/withr_{{ version }}.tar.gz
-  sha256: 0a3a05f493d275cca4bf13c8c1b95a1a4eed7f83b2493f41fde02ce3fc92c1a3
+  sha256: d86c6454164fc85678bfc85e2a6cce42f7461d45fa9a87de71f376e7956c991e
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
